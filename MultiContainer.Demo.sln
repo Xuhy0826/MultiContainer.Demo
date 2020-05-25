@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.GateWay", "Demo.GateWay\Demo.GateWay.csproj", "{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.GateWay", "Demo.GateWay\Demo.GateWay.csproj", "{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Service.User", "Demo.Service.User", "{CDCEA056-50F2-4B20-9A08-59E01A346BF4}"
 EndProject
@@ -15,7 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Service.Order", "Demo.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.shared", "Demo.shared", "{12069E45-6B49-49F5-8915-292DC3780EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.IdentityServer", "Demo.IdentityServer\Demo.IdentityServer.csproj", "{B61BE8AF-A9EF-446D-8860-12FC3A56D397}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.IdentityServer", "Demo.IdentityServer\Demo.IdentityServer.csproj", "{B61BE8AF-A9EF-446D-8860-12FC3A56D397}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mark.Common", "Mark.Common\Mark.Common.csproj", "{22103E80-650B-4E31-9603-B2F24A83D534}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Core", "Infrastructure.Core\Infrastructure.Core.csproj", "{B087C7E0-C69F-4F3A-9D14-226CD0103C60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Core", "Domain.Abstractions\Domain.Core.csproj", "{32470CC5-5F18-41AE-8D4E-62012D313FF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,9 +37,26 @@ Global
 		{B61BE8AF-A9EF-446D-8860-12FC3A56D397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B61BE8AF-A9EF-446D-8860-12FC3A56D397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B61BE8AF-A9EF-446D-8860-12FC3A56D397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22103E80-650B-4E31-9603-B2F24A83D534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22103E80-650B-4E31-9603-B2F24A83D534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22103E80-650B-4E31-9603-B2F24A83D534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22103E80-650B-4E31-9603-B2F24A83D534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B087C7E0-C69F-4F3A-9D14-226CD0103C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B087C7E0-C69F-4F3A-9D14-226CD0103C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B087C7E0-C69F-4F3A-9D14-226CD0103C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B087C7E0-C69F-4F3A-9D14-226CD0103C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32470CC5-5F18-41AE-8D4E-62012D313FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32470CC5-5F18-41AE-8D4E-62012D313FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32470CC5-5F18-41AE-8D4E-62012D313FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32470CC5-5F18-41AE-8D4E-62012D313FF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22103E80-650B-4E31-9603-B2F24A83D534} = {12069E45-6B49-49F5-8915-292DC3780EF2}
+		{B087C7E0-C69F-4F3A-9D14-226CD0103C60} = {12069E45-6B49-49F5-8915-292DC3780EF2}
+		{32470CC5-5F18-41AE-8D4E-62012D313FF4} = {12069E45-6B49-49F5-8915-292DC3780EF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87F3F288-08E4-43A2-99DE-024BD1034FC9}
