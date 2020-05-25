@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.GateWay", "Demo.GateWay\Demo.GateWay.csproj", "{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Service.User", "Demo.Service.User", "{CDCEA056-50F2-4B20-9A08-59E01A346BF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Service.Material", "Demo.Service.Material", "{8F76E457-815F-4C7C-91AF-6E2D767A9BEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Service.Mechandise", "Demo.Service.Mechandise", "{FC40C530-7A60-47DE-96B7-EB7198A50FAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.Service.Order", "Demo.Service.Order", "{51500305-335A-4517-A962-4E59232B875E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo.shared", "Demo.shared", "{12069E45-6B49-49F5-8915-292DC3780EF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F96C1C4-4C68-48F4-84E6-1DB50B6D25A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87F3F288-08E4-43A2-99DE-024BD1034FC9}
+	EndGlobalSection
+EndGlobal
