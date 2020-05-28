@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Demo.$projectname$.Domain.Model.QueryModel
 {
-    public class $projectname$QueryModel : QueryModel
+    public class $projectname$Query : QueryModel
     {
 
     }

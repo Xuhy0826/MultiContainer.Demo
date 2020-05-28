@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Demo.User.API</name>
+    </assembly>
+    <members>
+        <member name="T:Demo.User.API.Controllers.UserController">
+            <summary>
+            “用户”管理功能
+            </summary>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.PagedUsers(Demo.User.API.Application.Queries.UserPagedCollectionQueryRequest,System.String)">
+            <summary>
+            分页查询所有用户信息数据
+            </summary>
+            <param name="request"></param>
+            <param name="accept">请求的媒体类型，可选值“application/json”或“application/vnd.demo.hateoas+json”</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.GetUser(System.Nullable{System.Int64},System.String,System.String)">
+            <summary>
+            根据id查询单个实体的数据
+            </summary>
+            <param name="id">实体id</param>
+            <param name="fields">请求的字段</param>
+            <param name="mediaType">请求的媒体类型，可选“application/json”或者“application/vnd.demo.hateoas+json”，使用后者返回数据中包含自驱动的链接</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.GetUsers(Demo.User.API.Application.Queries.UserCollectionQueryRequest,System.String)">
+            <summary>
+            查询“用户”数据的集合
+            </summary>
+            <param name="request">请求参数集合</param>
+            <param name="mediaType">请求的媒体类型，可选“application/json”或者“application/vnd.demo.hateoas+json”，使用后者返回数据中包含自驱动的链接</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.CreateUser(Demo.User.Domain.Model.Dto.UserAddDto,System.String)">
+            <summary>
+            创建一条“用户”信息
+            </summary>
+            <param name="returnVisit"></param>
+            <param name="mediaType">请求的媒体类型，可选“application/json”或者“application/vnd.demo.hateoas+json”，使用后者返回数据中包含自驱动的链接</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.PutUser(System.Int64,Demo.User.Domain.Model.Dto.UserUpdateDto,System.String)">
+            <summary>
+            修改“用户”信息，Put方法
+            </summary>
+            <param name="id">“用户”信息的id，最好存在在请求的QueryString中</param>
+            <param name="user">修改的参数，最好存在请求的Body中”</param>
+            <param name="mediaType">请求的媒体类型，可选“application/json”或者“application/vnd.demo.hateoas+json”，使用后者返回数据中包含自驱动的链接</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.PatchUser(System.Int64,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{Demo.User.Domain.Model.Dto.UserUpdateDto},System.String)">
+            <summary>
+            修改“用户”信息(局部更新)，Patch方法，请求的mediaType是“application/json-patch+json”
+            </summary>
+            <param name="id">“用户”信息的id，最好存在在请求的QueryString中</param>
+            <param name="patchDocument">请求Body中的数据格式为JSON PATCH（标准参照RFC 6902）</param>
+            <param name="mediaType">请求的媒体类型，可选“application/json”或者“application/vnd.demo.hateoas+json”，使用后者返回数据中包含自驱动的链接</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.User.API.Controllers.UserController.DeleteUser(System.Int64)">
+            <summary>
+            删除一条“用户”信息
+            </summary>
+            <param name="id">“用户”信息的Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:Demo.User.API.Extensions.ServiceCollectionExtensions">
+            <summary>
+            服务注册
+            </summary>
+        </member>
+        <member name="M:Demo.User.API.Services.PropertyMappingService.ValidMappingExistsFor``2(System.String)">
+            <summary>
+            判断传入的orderby是否合法
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TDestination"></typeparam>
+            <param name="fields">【例】：传入格式如“orderby age ”</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

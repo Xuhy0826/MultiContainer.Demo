@@ -3,17 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <RootNamespace>Demo.$projectname$.API</RootNamespace>
+    <RootNamespace>Demo.User.API</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;1591</NoWarn>
-    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.$projectname$.API\Demo.$projectname$.API.xml</DocumentationFile>
+    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.User.API\Demo.User.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702;1591</NoWarn>
-    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.$projectname$.API\Demo.$projectname$.API.xml</DocumentationFile>
+    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.User.API\Demo.User.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,13 +31,12 @@
     <Folder Include="Application\Commands\" />
     <Folder Include="Application\DomainEventHandlers\" />
     <Folder Include="Application\Helper\" />
-    <Folder Include="Application\IntegrationEvents\" />
-    <Folder Include="Application\Queries\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Profiles\" />
-    <Folder Include="Services\" />
-    <Folder Include="SwaggerExt\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.User.Domain\Demo.User.Domain.csproj" />
+    <ProjectReference Include="..\Demo.User.Infrastructure\Demo.User.Infrastructure.csproj" />
+    <ProjectReference Include="..\Mark.Common\Mark.Common.csproj" />
   </ItemGroup>
 
 

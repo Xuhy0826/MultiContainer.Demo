@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Demo.User.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Demo.User.Domain.Aggregate.User">
+            <summary>
+            用户基本信息
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.No">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.TelNumber">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.BirthDay">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.HomeAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.VipFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.Remark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.Level">
+            <summary>
+            等级
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.RewardPoint">
+            <summary>
+            积分
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.Avatar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Aggregate.User.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.No">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.Gender">
+            <summary>
+            用户性别
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.TelNumber">
+            <summary>
+            用户电话
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.IsVip">
+            <summary>
+            是否VIP
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.Level">
+            <summary>
+            用户等级
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.RewardPoint">
+            <summary>
+            用户积分
+            </summary>
+        </member>
+        <member name="P:Demo.User.Domain.Model.Dto.UserDto.Avatar">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+    </members>
+</doc>

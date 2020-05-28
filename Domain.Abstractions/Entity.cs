@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Abstractions
 {
@@ -37,6 +36,7 @@ namespace Domain.Abstractions
 
     public abstract class Entity<TKey> : Entity, IEntity<TKey>
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual TKey Id { get; protected set; }
         public override object[] Keys => new object[]{Id};
 

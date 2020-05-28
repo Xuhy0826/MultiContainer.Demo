@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Demo.$projectname$.Domain</RootNamespace>
+    <RootNamespace>Demo.User.Infrastructure</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Demo.Template.Domain\Demo.$projectname$.Domain.csproj" />
+    <ProjectReference Include="..\Demo.User.Domain\Demo.User.Domain.csproj" />
     <ProjectReference Include="..\Domain.Abstractions\Domain.Core.csproj" />
     <ProjectReference Include="..\Infrastructure.Core\Infrastructure.Core.csproj" />
     <ProjectReference Include="..\Mark.Common\Mark.Common.csproj" />
