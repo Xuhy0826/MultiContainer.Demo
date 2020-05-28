@@ -7,20 +7,13 @@ namespace Order.Aggregate.OrderAggregate
 {
     public class Order : Entity<long>, IAggregateRoot
     {
-        /// <summary>
-        /// 订单号
-        /// </summary>
-        public string No { get; set; }
-
-        public DateTime S { get; set; }
-
         private DateTime _orderDate;
 
         // Address is a Value Object pattern example persisted as EF Core 2.0 owned entity
         public Address Address { get; private set; }
 
-        public int? GetBuyerId => _buyerId;
-        private int? _buyerId;
+        public long? GetBuyerId => _buyerId;
+        private long? _buyerId;
 
         public OrderStatus OrderStatus { get; private set; }
         private int _orderStatusId;

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Order</RootNamespace>
+    <RootNamespace>Demo.Order.Domain</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Aggregate\BuyerAggregate\" />
     <Folder Include="Model\Enums\" />
     <Folder Include="Model\Extension\" />
     <Folder Include="Events\" />

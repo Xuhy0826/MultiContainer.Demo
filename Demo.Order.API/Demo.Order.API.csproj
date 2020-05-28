@@ -3,17 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <RootNamespace>Demo.$projectname$.API</RootNamespace>
+    <RootNamespace>Demo.Order.API</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;1591</NoWarn>
-    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.$projectname$.API\Demo.$projectname$.API.xml</DocumentationFile>
+    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.Order.API\Demo.Order.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702;1591</NoWarn>
-    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.$projectname$.API\Demo.$projectname$.API.xml</DocumentationFile>
+    <DocumentationFile>D:\workspace\GitHub_local\MultiContainer.Demo\Demo.Order.API\Demo.Order.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +25,19 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Commands\" />
+    <Folder Include="Application\DomainEventHandlers\" />
+    <Folder Include="Application\Helper\" />
+    <Folder Include="Application\IntegrationEvents\" />
+    <Folder Include="Application\Queries\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="Services\" />
+    <Folder Include="SwaggerExt\" />
   </ItemGroup>
 
 

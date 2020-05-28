@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Domain.Abstractions;
 
 namespace Order.Aggregate.OrderAggregate

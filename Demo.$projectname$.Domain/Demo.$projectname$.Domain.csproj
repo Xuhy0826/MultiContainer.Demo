@@ -16,12 +16,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Enums\" />
-    <Folder Include="Model\Extension\" />
-    <Folder Include="Events\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Domain.Abstractions\Domain.Core.csproj" />
   </ItemGroup>
 
