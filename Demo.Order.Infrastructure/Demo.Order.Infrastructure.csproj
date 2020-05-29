@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Demo.Template.Domain\Demo.Order.Domain.csproj" />
+    <ProjectReference Include="..\Demo.Order.Domain\Demo.Order.Domain.csproj" />
     <ProjectReference Include="..\Domain.Abstractions\Domain.Core.csproj" />
     <ProjectReference Include="..\Infrastructure.Core\Infrastructure.Core.csproj" />
     <ProjectReference Include="..\Mark.Common\Mark.Common.csproj" />

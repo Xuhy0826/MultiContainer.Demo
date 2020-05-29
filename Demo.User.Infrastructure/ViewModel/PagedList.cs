@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Demo.User.Infrastructure.Container
+namespace Demo.User.Infrastructure.ViewModel
 {
     public class PagedList<T> : List<T>
     {
