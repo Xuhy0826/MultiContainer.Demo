@@ -23,7 +23,7 @@ namespace Demo.User.API.Extensions
             return services.AddDbContext<DomainContext>(optionsAction);
         }
 
-        public static IServiceCollection AddOracleDomainContext(this IServiceCollection services, string connectionString, string version)
+        public static IServiceCollection AddMySqlDomainContext(this IServiceCollection services, string connectionString, string version)
         {
             return services.AddDomainContext(builder =>
             {

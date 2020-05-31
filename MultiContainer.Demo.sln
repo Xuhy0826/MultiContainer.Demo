@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Order.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Order.API", "Demo.Order.API\Demo.Order.API.csproj", "{48D0EB5F-A494-4204-BD77-762B5D181C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Catalog.API", "Demo.Catalog.API\Demo.Catalog.API.csproj", "{00C40C2F-20FE-4DB6-B96D-AFD2D58B81B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Catalog.API", "Demo.Catalog.API\Demo.Catalog.API.csproj", "{00C40C2F-20FE-4DB6-B96D-AFD2D58B81B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

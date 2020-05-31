@@ -71,7 +71,7 @@ namespace Demo.User.API
             //注入中间者
             services.AddMediatRServices();
             //注入数据可支持
-            services.AddOracleDomainContext(Configuration.GetValue<string>("Oracle"), Configuration.GetValue<string>("OracleVersion"));
+            services.AddMySqlDomainContext(Configuration.GetValue<string>("Oracle"), Configuration.GetValue<string>("OracleVersion"));
             //注入仓储
             services.AddRepositories();
             services.AddEventBus(Configuration);
