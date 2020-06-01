@@ -20,6 +20,8 @@ namespace Demo.Catalog.API.Infrastructure
             builder.ApplyConfiguration(new CatalogBrandEntityTypeConfiguration());
             builder.ApplyConfiguration(new CatalogTypeEntityTypeConfiguration());
             builder.ApplyConfiguration(new CatalogItemEntityTypeConfiguration());
+
+            base.OnModelCreating(builder);
         }
     }
 
@@ -28,7 +30,7 @@ namespace Demo.Catalog.API.Infrastructure
         public CatalogContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<CatalogContext>()
-                .UseMySql("");
+                .UseMySql("Data Source=localhost;port=3306;Initial Catalog=Catalog_API;user id=root;password=root;");
 
             return new CatalogContext(optionsBuilder.Options);
         }

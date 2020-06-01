@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Order.Model.QueryModel
+namespace Order.Model
 {
     public class OrderQuery : QueryModel
     {

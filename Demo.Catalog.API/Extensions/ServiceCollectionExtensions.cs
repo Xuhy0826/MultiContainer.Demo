@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Demo.Catalog.API.Infrastructure;
+using Demo.Catalog.API.Infrastructure.Filter;
 using Demo.Catalog.API.IntegrationEvents;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +12,35 @@ namespace Demo.Catalog.API.ServiceExtension
 {
     public static class ServiceCollectionExtensions
     {
+        #region MVC
+        public static IServiceCollection AddCustomMVC(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+            }).AddNewtonsoftJson();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+
+            return services;
+        }
+        #endregion
+
         #region 数据库
         public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddEntityFrameworkMySql()
                 .AddDbContext<CatalogContext>(options =>
                 {
-                    options.UseMySql(configuration["ConnectionString"],
+                    options.UseMySql(configuration["MySql"],
                         sqlOptions =>
                         {
                             sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);

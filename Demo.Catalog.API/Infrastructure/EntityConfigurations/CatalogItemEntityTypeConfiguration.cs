@@ -11,7 +11,7 @@ namespace Demo.Catalog.API.Infrastructure.EntityConfigurations
         {
             builder.ToTable("Catalog");
 
-            builder.Property(ci => ci.Id).IsRequired();
+            //builder.Property(ci => ci.Id).IsRequired();
 
             builder.Property(ci => ci.Name)
                 .IsRequired(true)

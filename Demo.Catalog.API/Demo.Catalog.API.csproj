@@ -8,16 +8,24 @@
   <ItemGroup>
     <PackageReference Include="DotNetCore.CAP.MySql" Version="3.0.4" />
     <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="3.0.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Polly" Version="7.2.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Exception\" />
-    <Folder Include="Infrastructure\CatalogMigrations\" />
     <Folder Include="Setup\" />
     <Folder Include="Pics\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mark.Common\Mark.Common.csproj" />
   </ItemGroup>
 
 
