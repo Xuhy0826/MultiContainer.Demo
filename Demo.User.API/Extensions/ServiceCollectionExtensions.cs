@@ -30,7 +30,7 @@ namespace Demo.User.API.Extensions
                 var loggerFactory = new LoggerFactory();
                 loggerFactory.AddProvider(new EFLoggerProvider());
                 builder.UseLoggerFactory(loggerFactory);
-                builder.UseMySQL(connectionString);
+                builder.UseMySql(connectionString);
             });
         }
 
@@ -54,7 +54,7 @@ namespace Demo.User.API.Extensions
             services.AddCap(options =>
             {
                 options.FailedRetryCount = 1;
-                options.UseMySql(configuration["MySql"]);
+                options.UseEntityFramework<DomainContext>();
                 _ = options.UseRabbitMQ(rabbiteOptions =>
                 {
                     configuration.GetSection("RabbitMQ").Bind(options);

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using Demo.Catalog.API.Infrastructure;
 using Demo.Catalog.API.IntegrationEvents;
 using Microsoft.AspNetCore.Http;
@@ -10,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MySql.Data.EntityFrameworkCore.Extensions;
 
 namespace Demo.Catalog.API.ServiceExtension
 {
@@ -19,10 +14,10 @@ namespace Demo.Catalog.API.ServiceExtension
         #region 数据库
         public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddEntityFrameworkMySQL()
+            services.AddEntityFrameworkMySql()
                 .AddDbContext<CatalogContext>(options =>
                 {
-                    options.UseMySQL(configuration["ConnectionString"],
+                    options.UseMySql(configuration["ConnectionString"],
                         sqlOptions =>
                         {
                             sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
@@ -66,7 +61,7 @@ namespace Demo.Catalog.API.ServiceExtension
             services.AddCap(options =>
             {
                 options.FailedRetryCount = 1;
-                options.UseMySql(configuration["MySql"]);
+                options.UseEntityFramework<CatalogContext>();
                 _ = options.UseRabbitMQ(rabbiteOptions =>
                 {
                     configuration.GetSection("RabbitMQ").Bind(options);

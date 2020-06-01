@@ -9,7 +9,7 @@ using AutoMapper;
 using Demo.User.Domain.Model;
 using Demo.User.Domain.Model.Dto;
 using Demo.User.Infrastructure;
-using Demo.User.Infrastructure.Container;
+using Demo.User.Infrastructure.ViewModel;
 using Domain.Core.Model;
 using Mark.Common.Services;
 using MediatR;

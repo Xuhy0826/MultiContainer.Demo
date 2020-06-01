@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Demo.User.Domain.Model;
 using Demo.User.Domain.Model.Dto;
-using Demo.User.Infrastructure.Container;
+using Demo.User.Infrastructure.ViewModel;
 using Infrastructure.Core;
 using Mark.Common.ExtensionMethod;
 using Mark.Common.Services;

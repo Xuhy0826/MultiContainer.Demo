@@ -1,4 +1,5 @@
-﻿using Demo.Catalog.API.Model;
+﻿using Demo.Catalog.API.Infrastructure.EntityConfigurations;
+using Demo.Catalog.API.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
@@ -27,7 +28,7 @@ namespace Demo.Catalog.API.Infrastructure
         public CatalogContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<CatalogContext>()
-                .UseMySQL("");
+                .UseMySql("");
 
             return new CatalogContext(optionsBuilder.Options);
         }
