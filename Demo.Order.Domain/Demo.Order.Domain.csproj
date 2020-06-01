@@ -19,7 +19,6 @@
     <Folder Include="Aggregate\BuyerAggregate\" />
     <Folder Include="Model\Enums\" />
     <Folder Include="Model\Extension\" />
-    <Folder Include="Events\" />
   </ItemGroup>
 
   <ItemGroup>
