@@ -1,38 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Demo.Order.Domain.Events;
 using Domain.Abstractions;
+using Order.Exception;
 
 namespace Order.Aggregate.OrderAggregate
 {
-    public class Order : Entity<long>, IAggregateRoot
+    public class Order : Entity<int>, IAggregateRoot
     {
         private DateTime _orderDate;
-
-        // Address is a Value Object pattern example persisted as EF Core 2.0 owned entity
         public Address Address { get; private set; }
 
-        public long? GetBuyerId => _buyerId;
-        private long? _buyerId;
+        private int? _buyerId;
+        public int? GetBuyerId => _buyerId;
 
-        public OrderStatus OrderStatus { get; private set; }
+
         private int _orderStatusId;
+        public OrderStatus OrderStatus { get; private set; }
+        
 
         private string _description;
 
-
-
-        // Draft orders have this set to true. Currently we don't check anywhere the draft status of an Order, but we could do it if needed
         private bool _isDraft;
 
-        // DDD Patterns comment
-        // Using a private collection field, better for DDD Aggregate's encapsulation
-        // so OrderItems cannot be added from "outside the AggregateRoot" directly to the collection,
-        // but only through the method OrderAggrergateRoot.AddOrderItem() which includes behaviour.
+        // 使用DDD模式，将订单项设置成私有字段，这样在聚合根之外无法操作订单项OrderItem
         private readonly List<OrderItem> _orderItems;
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
         private int? _paymentMethodId;
+
 
         public static Order NewDraft()
         {
@@ -55,37 +52,25 @@ namespace Order.Aggregate.OrderAggregate
             _orderStatusId = OrderStatus.Submitted.Id;
             _orderDate = DateTime.UtcNow;
             Address = address;
-
-            // Add the OrderStarterDomainEvent to the domain events collection 
-            // to be raised/dispatched when comitting changes into the Database [ After DbContext.SaveChanges() ]
+            //添加领域事件，在事务提交时触发该领域事件[ After DbContext.SaveChanges() ]
             AddOrderStartedDomainEvent(userId, userName, cardTypeId, cardNumber,
                                        cardSecurityNumber, cardHolderName, cardExpiration);
         }
 
-        // DDD Patterns comment
-        // This Order AggregateRoot's method "AddOrderitem()" should be the only way to add Items to the Order,
-        // so any behavior (discounts, etc.) and validations are controlled by the AggregateRoot 
-        // in order to maintain consistency between the whole Aggregate. 
         public void AddOrderItem(int productId, string productName, decimal unitPrice, decimal discount, string pictureUrl, int units = 1)
         {
-            var existingOrderForProduct = _orderItems.Where(o => o.ProductId == productId)
-                .SingleOrDefault();
+            var existingOrderForProduct = _orderItems.Where(o => o.ProductId == productId).SingleOrDefault();
 
             if (existingOrderForProduct != null)
             {
-                //if previous line exist modify it with higher discount  and units..
-
                 if (discount > existingOrderForProduct.GetCurrentDiscount())
                 {
                     existingOrderForProduct.SetNewDiscount(discount);
                 }
-
                 existingOrderForProduct.AddUnits(units);
             }
             else
             {
-                //add validated new order item
-
                 var orderItem = new OrderItem(productId, productName, unitPrice, discount, pictureUrl, units);
                 _orderItems.Add(orderItem);
             }
@@ -119,29 +104,6 @@ namespace Order.Aggregate.OrderAggregate
                 _orderStatusId = OrderStatus.StockConfirmed.Id;
                 _description = "All the items were confirmed with available stock.";
             }
-        }
-
-        public void SetPaidStatus()
-        {
-            if (_orderStatusId == OrderStatus.StockConfirmed.Id)
-            {
-                AddDomainEvent(new OrderStatusChangedToPaidDomainEvent(Id, OrderItems));
-
-                _orderStatusId = OrderStatus.Paid.Id;
-                _description = "The payment was performed at a simulated \"American Bank checking bank account ending on XX35071\"";
-            }
-        }
-
-        public void SetShippedStatus()
-        {
-            if (_orderStatusId != OrderStatus.Paid.Id)
-            {
-                StatusChangeException(OrderStatus.Shipped);
-            }
-
-            _orderStatusId = OrderStatus.Shipped.Id;
-            _description = "The order was shipped.";
-            AddDomainEvent(new OrderShippedDomainEvent(this));
         }
 
         public void SetCancelledStatus()

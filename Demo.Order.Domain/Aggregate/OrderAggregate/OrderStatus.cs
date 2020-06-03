@@ -6,6 +6,10 @@ using Order.Exception;
 
 namespace Order.Aggregate.OrderAggregate
 {
+    /// <summary>
+    /// 订单状态
+    /// 这里使用的是“枚举类”而不是“枚举类型enum”
+    /// </summary>
     public class OrderStatus : Enumeration
     {
         public static OrderStatus Submitted = new OrderStatus(1, nameof(Submitted).ToLowerInvariant());

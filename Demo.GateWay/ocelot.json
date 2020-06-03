@@ -1,5 +1,7 @@
 {
+  //服务器的路由配置
   "ReRoutes": [],
+  //全局配置
   "GlobalConfiguration": {
   }
 }

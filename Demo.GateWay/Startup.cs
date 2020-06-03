@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 namespace Demo.GateWay
 {
@@ -19,6 +21,7 @@ namespace Demo.GateWay
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddOcelot();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +42,7 @@ namespace Demo.GateWay
             {
                 endpoints.MapControllers();
             });
+            app.UseOcelot().Wait();
         }
     }
 }
